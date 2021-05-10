@@ -2253,7 +2253,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 		this.titleHolderElement.classList.add("d-flex");
 
-		this.titleHolderElement.innerHTML = '<i class="fas fa-grip-vertical float-left"></i>';		 
+		this.titleHolderElement.innerHTML = '<i class="d-flex justify-content-center align-items-center fas fa-grip-vertical me-1"></i>';		 
 
 		contentElement.appendChild(this.titleHolderElement);
 

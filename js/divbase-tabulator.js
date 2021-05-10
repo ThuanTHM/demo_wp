@@ -47,6 +47,11 @@ $(document).ready(function () {
         movableRowsReceiver: "insert",
         movableRowsSender: "delete",
         movableColumns: true,
+        columnMoved:function(column, columns){
+          //column - column component of the moved column
+          //columns- array of columns in new order
+          console.log(columns.indexOf(column));
+        },
         placeholder:"All Rows Moved",
         data: sampledata[this.id],
         columns:[
