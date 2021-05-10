@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Drag row/column</title>
+  <link rel="stylesheet" href="./plugins/datatables/jquery.faber.dataTablesv2.css" />
+  <link rel="stylesheet" href="./plugins/datatables/rowReorder.dataTables.min.css" />
+  <link rel="stylesheet" href="./plugins/datatables/colReorder.dataTables.min.css" />
+  <script src="./plugins/jquery/jquery.min.js"></script>
+  <script src="./plugins/datatables/jquery.datatables.min.js"></script>
+  <script src="./plugins/datatables/jquery.dataTables.rowReordering.js"></script>
+  <script src="./plugins/datatables/dataTables.colReorder.min.js"></script>
+</head>
+
+<body>
+  <div class="fb-tbl-wrap">
+    <!--Start header fb datatable-->
+    <div class="fb-tbl-header">
+      <h3 class="tbl-title"> Title header</h3>
+      <div class="flex-tbl">
+        <div class="tbl-search">
+          <input type="text" class="tbl-input-search" />
+        </div>
+        <div class="tbl-action">
+          <button class="btn-tbl" data-toggle="modal" data-target="#modalAddSite">
+            <i class="fa fa-plus"></i>
+            <span>Add site</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!--End header fb datatable-->
+    <table id="example" class="display" style="width: 100%">
+      <thead>
+        <tr>
+          <th>Seq.</th>
+          <th>Name</th>
+          <th>Position</th>
+          <th>Office</th>
+          <th>Start date</th>
+          <th>Salary</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2</td>
+          <td>Tiger Nixon</td>
+          <td>System Architect</td>
+          <td>Edinburgh</td>
+          <td>2011/04/25</td>
+          <td>$320,800</td>
+        </tr>
+        <tr>
+          <td>22</td>
+          <td>Garrett Winters</td>
+          <td>Accountant</td>
+          <td>Tokyo</td>
+          <td>2011/07/25</td>
+          <td>$170,750</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>Ashton Cox</td>
+          <td>Junior Technical Author</td>
+          <td>San Francisco</td>
+          <td>2009/01/12</td>
+          <td>$86,000</td>
+        </tr>
+        <tr>
+          <td>41</td>
+          <td>Cedric Kelly</td>
+          <td>Senior Javascript Developer</td>
+          <td>Edinburgh</td>
+          <td>2012/03/29</td>
+          <td>$433,060</td>
+        </tr>
+        <tr>
+          <td>55</td>
+          <td>Airi Satou</td>
+          <td>Accountant</td>
+          <td>Tokyo</td>
+          <td>2008/11/28</td>
+          <td>$162,700</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    $(document).ready(function () {
+      var table = $("#example").DataTable({
+        rowReorder: true,
+        colReorder: true,
+        columnDefs: [
+          { orderable: true, className: "reorder", targets: 0 },
+          { orderable: false, targets: "_all" },
+        ],
+      });
+    });
+  </script>
+</body>
+
+</html>

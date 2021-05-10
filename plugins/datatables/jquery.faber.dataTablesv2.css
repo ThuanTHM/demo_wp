@@ -1,0 +1,456 @@
+@import "jquery.dataTables.min.css";
+
+.truncate{
+    display: block;
+    max-width: 100px;
+    min-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.col-left{text-align: left!important}
+.col-center{text-align: center!important}
+.col-right{text-align: right!important}
+
+/*=============================================
+=            DataTable CSS            =
+=============================================*/
+.fb-tbl-wrap{
+    border: 1px solid #dadce0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    position: relative;
+}
+.fb-tbl-wrap-bg{
+    background: #fafafa; 
+}
+.fb-tbl-wrap-none{
+    border-color: #fff!important;
+}
+.fb-tbl-wrap .checkbox, .fb-tbl-wrap .radio {
+    margin: 0px;
+    line-height: 1.42857143;
+}
+.fb-tbl-wrap thead th.sorting_disabled .checkbox, 
+.fb-tbl-wrap thead th.sorting_disabled .radio{
+    margin-left: 10px;   
+}
+.fb-tbl-header{
+    padding:10px;
+    background: #fafafa;
+    border-bottom: 1px solid #ddd;
+}
+.tbl-title{
+    font-weight: 600;
+    margin:0px!important;
+    padding:0px!important;
+}
+.btn-tbl{
+    font-size: 13px;
+    padding: 4px 5px;
+    min-width: 80px;
+    line-height: 1.4;
+    border-radius: 3px;
+    outline: none;
+    border:1px solid #ddd;
+    cursor: pointer;
+    background: #fafafa;
+}
+.flex-tbl{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+.tbl-search{
+    width: 250px;
+    background: #fff url(./img/icon-search.png) no-repeat left center;
+    background-position: 5px; 
+}
+.tbl-input-search{
+    height: 28px;
+    border: 1px solid rgba(33, 33, 33, 0.12);
+    border-radius: 0px;
+    background: none;
+    box-shadow: none;
+    color: #272B34;
+    padding-left: 25px;
+    padding-right: 5px;
+    width: 250px;
+    box-sizing: border-box;
+    outline: none;
+}
+.dataTables_filter{
+    display: none;   
+}
+.tbl-action{
+    margin-left: auto;    
+}
+.fb-tbl-body{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border:1px solid #ddd;
+}
+.fb-tbl-wrap .dataTables_filter,
+.fb-tbl-wrap .dataTables_length {
+    margin-bottom: 30px;
+}
+.fb-tbl-wrap .dataTables_length, 
+.fb-tbl-wrap .dataTables_filter {
+    margin-bottom:5px;
+    color: #727272;
+}
+
+.fb-tbl-wrap .dataTables_info {
+    color: #727272;
+}
+.fb-tbl-wrap input,
+.fb-tbl-wrap select {
+    height: 30px;
+    font-weight: 300;
+}
+table.dataTable thead th, 
+table.dataTable thead td{
+    padding-left: 10px !important;
+    padding-right: 18px !important;
+}
+table.dataTable thead th,
+table thead th{
+    background: #fafafa;
+    position: relative;
+}
+/*======Start Format rowspan====*/
+table.dataTable thead tr:nth-of-type(2) th{
+    border-top: 1px solid #ddd;
+}
+/*table.dataTable thead tr th:not([rowspan = '1']){
+    border-right: 1px solid #ddd;
+    text-align: center;
+}*/
+table.dataTable thead tr th[rowspan]{
+    border-right: 1px solid #ddd;
+}
+table.dataTable thead tr th.col-line-last{
+    border-right: 1px solid #ddd!important;
+}
+/*======End Format rowspan====*/
+
+/*======Start Format colspan====*/
+table.dataTable thead tr th:not([colspan = '1']){
+    border-right: 1px solid #ddd;
+}
+table.dataTable thead tr th:last-child[colspan = '1']{
+    border-right:none;
+}
+/*======Start End colspan====*/
+.fb-tbl-wrap.fb-tbl-wrap-pointer table.dataTable tbody tr{
+    cursor: pointer;
+}
+table.dataTable thead th, table.dataTable thead td{
+    border-bottom-color: transparent;
+    border-top: none;
+}
+table.dataTable tbody th, table.dataTable tbody td{
+    border-top: 1px solid #dadce0 !important;
+    font-size: small;
+}
+table.dataTable tbody td{
+    padding: 8px 10px !important;
+}
+.fb-tbl-wrap .dataTables_wrapper.no-footer .dataTables_scrollBody {
+    border-bottom: transparent!important; 
+}
+
+table.dataTable thead .sorting_asc {
+    background-image: url(./img/expand_less_24px.svg);
+    background-size: 20px;
+}
+table.dataTable thead .sorting {
+    background-image: url(./img/unfold_more_24px.svg);
+    background-size: 20px;
+}
+table.dataTable thead .sorting_desc {
+    background-image: url(./img/expand_more_24px.svg);
+    background-size: 20px;
+}
+
+table.dataTable thead .sorting,
+table.dataTable thead .sorting_asc,
+table.dataTable thead .sorting_desc{
+    border-left: none;
+    border-top: none;
+    padding-right: 20px;
+    font-weight: 600;
+    outline: none;
+}
+.fb-tbl-wrap .dataTables_filter input{
+    height: 28px;
+    border: 1px solid rgba(33, 33, 33, 0.12);
+    border-radius: 0px;
+    background-color: #f4f5f8;
+    box-shadow: none;
+    color: #272B34;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.fb-tbl-wrap .dataTables_length select{
+    margin-top:0px;
+    cursor: pointer;
+    max-width: 100px;
+    padding: 5px 15px 5px 5px;
+    border: none;
+    height: 28px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url(./img/sort-down-solid.svg);
+    background-size: 10px;
+    background-repeat: no-repeat;
+    background-position:right 2px top 3px ;
+}
+.fb-tbl-wrap .dataTables_length select::-ms-expand {
+    display: none; /* Remove default arrow in Internet Explorer 10 and 11 */
+}
+table.dataTable .form-control{
+    background: #fff;
+}
+.col-action{
+    width: 60px;
+}
+/* Target Internet Explorer 9 to undo the custom arrow */
+@media screen and (min-width:0\0) {
+    .fb-tbl-wrap .dataTables_length select{
+        background: none\9;
+        padding: 5px\9;
+    }
+}
+.fb-tbl-wrap .dataTables_filter input{
+    width: 191px;
+}
+.fb-tbl-wrap .dataTables_filter input:focus,
+.fb-tbl-wrap .dataTables_length select:focus {
+    border-color: rgba(33, 33, 33, 0.3);
+    box-shadow: none;
+    outline: 0 none;
+}
+table.dataTable.row-border tbody th, 
+table.dataTable.row-border tbody td,
+table.dataTable.display tbody th,
+table.dataTable.display tbody td {
+    border-color: #dadce0;
+    border-left: none;
+    border-bottom: none;
+}
+table.dataTable {
+    border-right: medium none !important;
+}
+table.dataTable > tfoot > tr > th {
+    border-bottom: 0 solid #eee !important;
+    border-left: medium none !important;
+}
+table.dataTable.no-footer {
+    border-bottom: transparent;
+}
+table.dataTable tbody>tr.selected, table.dataTable tbody>tr>.selected{
+    background: #dadce0!important;
+    cursor: pointer;
+}
+
+table.dataTable.display tbody>tr.selected>[class*="sorting"],
+table.dataTable.display tbody tr>[class*="sorting"],
+table.dataTable.order-column.stripe tbody tr>[class*="sorting"]
+table.dataTable.order-column.stripe tbody>tr.selected>[class*="sorting"]{
+    background-color: transparent!important;
+}
+table.dataTable tbody tr{
+    background: transparent;
+}
+table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover{
+    background: transparent;
+}
+table.dataTable.stripe tbody tr.odd, table.dataTable.display tbody tr.odd{
+    background: transparent;
+}
+
+
+table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before {
+    top:50%;
+    transform: translateY(-50%);
+}
+/*=============================================
+=            Format Filter Dropdown DataTable CSS            =
+=============================================*/
+.dataTables_length {
+    margin-top: 5px;
+    margin-left: 20px;
+    font-size: 12px;
+}
+/*=============================================
+=            Format Search DataTable CSS            =
+=============================================*/
+.dataTables_filter {
+    margin-right: 5px;
+    font-size: 12px;
+}
+/*=============================================
+=            Format Info DataTable CSS            =
+=============================================*/
+.dataTables_info{
+    margin-left: 15px;
+    font-size: 12px;
+    padding-top: 10px!Important;
+    padding-bottom: 10px;
+}
+/*=============================================
+=            Format Panigation DataTable CSS            =
+=============================================*/
+.dataTables_paginate{
+    margin-top:6px;
+    margin-right: 15px;
+    font-size: 12px;
+}
+.fb-tbl-wrap .dataTables_paginate .paginate_button {
+    color: #2C3E50;
+    padding:0px;
+    font-size: 12px;
+}
+.fb-tbl-wrap .dataTables_paginate .paginate_button.current,
+.fb-tbl-wrap .dataTables_paginate .paginate_button.current:hover {
+    background: transparent;
+    border-color: transparent;
+    color: #148E75!important;
+    font-weight: 700;
+}
+.fb-tbl-wrap .dataTables_paginate .paginate_button:hover, 
+.fb-tbl-wrap .dataTables_paginate .paginate_button:active, 
+.fb-tbl-wrap .dataTables_paginate .paginate_button:focus {
+    background: #fff;
+    border-color: transparent;
+    color: #1ABC9C !important;
+    box-shadow: none;
+}
+/*=============================================
+=            Format Panigation Posistion DataTable CSS            =
+=============================================*/
+.fb-tbl-wrap .bottom{
+    border-top: 1px solid #dadce0 ;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 0px;
+    background: #fafafa;
+}
+.fb-tbl-wrap .bottom .dataTables_info,
+.fb-tbl-wrap .bottom .dataTables_length{
+    flex:1;
+}
+.fb-tbl-wrap .bottom .dataTables_length{
+    text-align: right;
+    padding-right: 10px;
+}
+.toolbar {
+    padding-left: 5px;
+    float: left;
+
+}
+td.dataTables_empty{
+    font-size: 20px;
+    padding-top: 15px!important;
+}
+table.dataTable thead tr:nth-of-type(2) th[rowspan]{
+    border-top: 1px solid #ddd;
+}
+/*=============================================
+=            Set Table row details CSS            =
+=============================================*/
+.dataTable>tbody>tr>td[colspan]{
+    /*/setup-rule*/
+    /*padding:0px;*/ 
+}
+table.dataTable tr.group td[colspan]{
+    padding:10px 5px;
+    background-color: #edeff1;
+}
+.dataTable>tbody>tr>td[colspan] >ul{
+    list-style: none;
+    margin:0px;
+    padding:10px 0 0 0;
+}
+.dataTable>tbody>tr>td[colspan] >ul li{
+    display: flex;
+    padding:5px 10px 5px 40px;
+    border-bottom: 1px solid #ddd;
+}
+.dataTable>tbody>tr>td[colspan] >ul li:last-child{
+    border-bottom: none;
+}
+.dataTable>tbody>tr.child span.dtr-title{
+    flex: 0 0 300px;
+}
+.dataTable>tbody>tr>td[colspan] >ul li .dtr-data{
+    font-weight: bold;
+    color: #f83f37;
+}
+.table-detail>tbody>tr:first-child>td{
+    border-top: none!important;
+}
+.table-detail>tbody>tr>td{
+    padding:4px;
+}
+.fb-tbl-wrap .dataTables_length select{
+    background-color: transparent;
+}
+/*Format group UI DataTable*/
+.hidden-element {
+    display: none;
+}
+@media (max-width: 991px) {
+    table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before, 
+    table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before{
+        top:50%;
+        transform: translateY(-50%);
+    }
+}
+@media (max-width: 767px) {
+    .dataTable>tbody>tr>td[colspan] >ul li{
+        padding-left: 15px;
+    }
+    table.dataTable>tbody>tr.child span.dtr-data{
+        word-break: break-all;
+    }
+    .dataTables_wrapper .dataTables_paginate .paginate_button{
+        padding:0.2em 0.8em;
+    }
+    .toolbar{
+        float: none;
+        display: block;
+    }
+    .fb-tbl-wrap .top .dataTables_filter{
+        padding-left: 10px;
+        text-align: left;
+    }
+    .fb-tbl-wrap .bottom{
+        flex-wrap: wrap;
+    }
+    .fb-tbl-wrap .bottom .dataTables_info{
+        text-align: left;
+        margin-left: 0px;
+        padding-left: 10px;
+        flex: 0 0 55%; 
+    }
+    .fb-tbl-wrap .bottom .dataTables_length{
+        flex: 0 0 45%; 
+        margin-left: 0px;
+        margin-bottom: 0;
+    }
+    .dataTables_wrapper .dataTables_paginate{
+        width: 100%;
+        margin-right: 0px;
+    }
+}
+.table.table-normal thead th {
+    border-top: none!important;
+}
+table.table-normal thead th{
+    padding-right: 10px!important;
+}
