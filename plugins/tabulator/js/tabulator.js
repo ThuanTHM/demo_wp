@@ -12611,10 +12611,10 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 		connection.forEach(function (con) {
 
-			if (self.table !== con) {
+			// if (self.table !== con) {
 
 				connections.push(con);
-			}
+			// }
 		});
 
 		return connections;

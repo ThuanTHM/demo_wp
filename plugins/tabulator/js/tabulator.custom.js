@@ -35,3 +35,10 @@ var dateEditor = function(cell, onRendered, success, cancel, editorParams){
     //return the editor element
     return editor;
 };
+
+var operationsFormatter = function(cell, formatterParams, onRendered){
+    return '<a class="btn btn-sm btn-secondary w-100 p-0" href="#" role="button" id="dropdownMenuLink" data-id="' + cell.getValue() + '" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-caret-down"></i></a>';
+}
+var dragHandlerFormatter = function(cell, formatterParams, onRendered){
+    return '<i class="fas fa-grip-vertical"></i>';
+}
