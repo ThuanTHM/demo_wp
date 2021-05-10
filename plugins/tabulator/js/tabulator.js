@@ -2251,6 +2251,10 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 		this.titleHolderElement.classList.add("tabulator-col-title-holder");
 
+		this.titleHolderElement.classList.add("d-flex");
+
+		this.titleHolderElement.innerHTML = '<i class="fas fa-grip-vertical float-left"></i>';		 
+
 		contentElement.appendChild(this.titleHolderElement);
 
 		this.titleElement = this._buildColumnHeaderTitle();
